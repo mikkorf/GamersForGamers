@@ -1,0 +1,346 @@
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+  
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+  
+.form-signin input[type="password"] {
+    margin-bottom: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-registration input {
+    border-radius : 0;
+    margin-bottom: -1px;
+}
+
+/* Home Page */
+
+html, body{
+    height: fit-content;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    /* display: flex; */
+    flex-direction: column;
+    background-image: url(/img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* #homeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: black;
+    height: 100%;
+} */
+
+.content {
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;  
+    flex-direction: column;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#paragraph {
+    display: flex ;
+    text-align: left;
+    align-items: left;
+    justify-content: center;
+}
+
+#postBody {
+    background-color: #191919; 
+    color: #FBFAF5;
+    border-radius:0px 0px 100px 0px;
+}
+
+.info {
+    width: 150px;
+    float: left;
+}
+
+#contentimg {
+    box-shadow: 0 3px 10px 3px;
+    /* rgb(0 0 0 / 0.2) */
+}
+
+#containerPost a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+#back {
+    width: fit-content;
+    border-radius: 25px;
+}
+
+#komen {
+    background-color: rgb(45, 46, 48); 
+    color: #FBFAF5;
+    border-radius: 20px 20px 20px 20px;
+    padding: 10px;
+}
+
+#back:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.commentContainer {
+    /* background-color: rgba(25, 25, 25, .7); */
+    color: black;
+}
+
+.comment-wrapper .panel-body {
+    max-height:650px;
+    overflow:auto;
+}
+
+.comment-wrapper .media-list .media img {
+    width:64px;
+    height:64px;
+    border:2px solid #e5e7e8;
+}
+
+.comment-wrapper .media-list .media {
+    border-bottom:1px dashed #efefef;
+    margin-bottom:25px;
+}
+
+#overview{
+    height: 100%;
+}
+
+.pagination > li {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.pagination > li > span {
+    border-color: #191919 !important;
+    background-color: #191919 !important;
+}
+
+.pagination > li > a {
+    background-color: #191919 !important;
+    color: #fffccf !important;
+    border-color: #191919 !important;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    background-color: #8c52ff !important;
+    border-color: #8c52ff !important;  
+    color: #fffccf !important;
+}
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+    background-color: #8c52ff !important;
+    border-color: #8c52ff !important;
+    color: #fffccf !important;
+}
+
+@media only screen and (max-width: 1200px) {
+    #paragraph {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        display: flex ;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .logoimg {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #overview{
+        height: 400px;
+    }
+
+    #latestimg{
+        height: 250px;
+    }
+}
+
+/* Form */
+.main-content{
+	width: 50%;
+	border-radius: 20px;
+	box-shadow: 0 5px 5px rgba(0,0,0,.4);
+	margin: 5em auto;
+	display: flex;
+}
+
+.company__info{
+	background-color: #191919;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+	.company__info{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    
+    .login_form{
+		border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+		border-bottom-left-radius:20px;
+        border-bottom-right-radius:20px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.main-content{width: 90%;}
+	.company__info{
+		display: none;
+	}
+	.login_form{
+		border-top-left-radius:20px !important;
+        border-top-right-radius:20px !important;
+		border-bottom-left-radius:20px !important;
+	}
+}
+
+@media screen and (min-width: 642px) and (max-width:800px){
+	.main-content{width: 70%;}
+}
+
+.login_form{
+	background-color: #fff;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+	border-top:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+
+/* form{
+	padding: 0 2em;
+} */
+
+.form__input{
+	width: 100%;
+	border:0px solid transparent;
+	border-radius: 0;
+	border-bottom: 1px solid #aaa;
+	padding: .5em .5em .5em;
+	padding-left: 2em;
+	outline:none;
+	/* margin-bottom:1.5em; */
+	transition: all .5s ease;
+}
+
+.form__input:focus{
+	border-bottom-color: #191919;
+	box-shadow: 0 0 5px rgba(25,25,25,.4); 
+	border-radius: 4px;
+}
+
+#loginSubmit .btn{
+	transition: all .5s ease;
+	width: 70%;
+	border-radius: 30px;
+	color:#191919;
+	font-weight: 600;
+	background-color: #fff;
+	border: 1px solid #191919;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#loginSubmit .btn:hover{
+	background-color: #191919;
+	color:#fff;
+}
+
+#loginSubmit .btn:focus {
+    background-color: #191919;
+	color:#fff;
+}
+
+#loginContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* #textarea > textarea{  
+    display: block;
+    box-sizing: padding-box;
+    overflow: hidden;
+  
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 8px rgba(black, .3);
+    resize: none;
+} */
+
+.dropdown-menu > li > a:hover {
+    background-image: none;
+    background-color: #191919;
+    color : white !important;
+}
+
+.dropdown-menu > li > form > button:hover {
+    background-image: none;
+    background-color: #191919;
+    color : white !important;
+}
+
+trix-toolbar .trix-button {
+    background-color: white;
+}
+
+#textarea trix-toolbar [data-trix-button-group] {
+    display : none;
+}
+
+/* trix-editor .customized-min-height {
+      min-height: 10px;
+} */
