@@ -35,11 +35,25 @@ Route::get('/reviewPosts/{reviewPost:slug}/getAllLike', [ReviewPostController::c
 Route::post('/reviewPosts/{reviewPost:slug}/storeLike', [ReviewPostController::class, 'storeLike']);
 Route::post('/reviewPosts/{reviewPost:slug}/destroyLike', [ReviewPostController::class, 'destroyLike']);
 
-Route::get('/tipPosts', [TipPostController::class, 'index']);
-Route::get('tipPosts/{tipPost:slug}', [TipPostController::class, 'show']);
+Route::get('/tipPosts/checkSlug', [TipPostController::class, 'checkSlug']);
+Route::resource('/tipPosts', TipPostController::class);
+Route::get('/tipPosts/{tipPost:slug}/getAllComment', [TipPostController::class, 'getAllComment']);
+Route::post('/tipPosts/{tipPost:slug}/storeComment', [TipPostController::class, 'storeComment']);
+Route::post('/tipPosts/{tipPost:slug}/updateComment', [TipPostController::class, 'updateComment']);
+Route::post('/tipPosts/{tipPost:slug}/destroyComment', [TipPostController::class, 'destroyComment']);
+Route::get('/tipPosts/{tipPost:slug}/getAllLike', [TipPostController::class, 'getAllLike']);
+Route::post('/tipPosts/{tipPost:slug}/storeLike', [TipPostController::class, 'storeLike']);
+Route::post('/tipPosts/{tipPost:slug}/destroyLike', [TipPostController::class, 'destroyLike']);
  
-Route::get('/newsPosts', [NewsPostController::class, 'index']);
-Route::get('newsPosts/{newsPost:slug}', [NewsPostController::class, 'show']);
+Route::get('/newsPosts/checkSlug', [NewsPostController::class, 'checkSlug']);
+Route::resource('/newsPosts', NewsPostController::class);
+Route::get('/newsPosts/{newsPost:slug}/getAllComment', [NewsPostController::class, 'getAllComment']);
+Route::post('/newsPosts/{newsPost:slug}/storeComment', [NewsPostController::class, 'storeComment']);
+Route::post('/newsPosts/{newsPost:slug}/updateComment', [NewsPostController::class, 'updateComment']);
+Route::post('/newsPosts/{newsPost:slug}/destroyComment', [NewsPostController::class, 'destroyComment']);
+Route::get('/newsPosts/{newsPost:slug}/getAllLike', [NewsPostController::class, 'getAllLike']);
+Route::post('/newsPosts/{newsPost:slug}/storeLike', [NewsPostController::class, 'storeLike']);
+Route::post('/newsPosts/{newsPost:slug}/destroyLike', [NewsPostController::class, 'destroyLike']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);

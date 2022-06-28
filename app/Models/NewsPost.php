@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class NewsPost extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
     
     public function scopeFilter($query, array $filters)
     {
@@ -47,5 +48,24 @@ class NewsPost extends Model
     public function NewsComments()
     {   
         return $this->hasMany(NewsComment::class);
+    }
+
+    public function NewsLikes()
+    {   
+        return $this->hasMany(NewsLike::class);
+    }
+    
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }

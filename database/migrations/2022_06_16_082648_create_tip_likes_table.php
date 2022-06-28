@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReviewPostsTable extends Migration
+class CreateTipLikesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,11 @@ class CreateReviewPostsTable extends Migration
      * @return void
      */
     public function up()
-    { 
-        Schema::create('review_posts', function (Blueprint $table) {
+    {
+        Schema::create('tip_likes', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->foreignId('category_id');
+            $table->foreignId('tipPost_id');
             $table->foreignId('user_id');
-            $table->string('slug')->unique();
-            $table->string('image')->nullable();
-            $table->text('excerpt');
-            $table->text('body');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateReviewPostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('review_posts');
+        Schema::dropIfExists('tip_likes');
     }
 }

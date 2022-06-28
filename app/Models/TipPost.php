@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class TipPost extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
     
     public function scopeFilter($query, array $filters)
     {
@@ -47,5 +48,24 @@ class TipPost extends Model
     public function TipComments()
     {   
         return $this->hasMany(TipComment::class);
+    }
+
+    public function TipLikes()
+    {   
+        return $this->hasMany(TipLike::class);
+    }
+    
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }

@@ -103,7 +103,6 @@ class ReviewPostController extends Controller
         
         ReviewComment::create($validatedData);
 
-        // return redirect('/reviewPosts/' . $request->reviewSlug)->with('success', 'Comment has been posted!');
         return response()->json($validatedData);
     }
 

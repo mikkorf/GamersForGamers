@@ -20,8 +20,8 @@ class CreateNewsPostsTable extends Migration
             $table->foreignId('user_id');
             $table->string('slug')->unique();
             $table->text('excerpt');
+            $table->string('image')->nullable();
             $table->text('body');
-            $table->timestamp('publised_at')->nullable();
             $table->timestamps();
         });
     }
